@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b16dc7c203450459bb86e24305f9ca, type: 3}
+  m_Name: ES3GlobalReferences
+  m_EditorClassIdentifier: 
+  refId:
+    _Keys:
+    - {fileID: 11500000, guid: ce36d59d99a214e6eaf53f2d9da6fd54, type: 3}
+    - {fileID: 11500000, guid: 7f9bf2f871f4945aea4719301f514c73, type: 3}
+    - {fileID: 11500000, guid: 05a2b947342584b349488969e2cc1f56, type: 3}
+    - {fileID: 11500000, guid: ab99ceb1402f9487bb2a52613a140de7, type: 3}
+    - {fileID: 11500000, guid: 30d7095a11bf94684b1d83f91e224cf9, type: 3}
+    - {fileID: 24100000, guid: b599d46b474c6724c9befa25955607e4, type: 2}
+    - {fileID: 24300002, guid: b599d46b474c6724c9befa25955607e4, type: 2}
+    - {fileID: 243350239257004656, guid: b599d46b474c6724c9befa25955607e4, type: 2}
+    - {fileID: 243581645868896638, guid: b599d46b474c6724c9befa25955607e4, type: 2}
+    - {fileID: 24500006, guid: b599d46b474c6724c9befa25955607e4, type: 2}
+    - {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+    - {fileID: 11500000, guid: bedef2aeaac8da04faa9a07b7241d0ad, type: 3}
+    - {fileID: 11500000, guid: 92fa9daa286764fab849269e51f5e982, type: 3}
+    - {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+    - {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+    - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+    - {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+    - {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+    _Values: 8abd7a695183334f8fe402199442a003c0a9adc3df7ca1485db89a0157b48106d23679650aa9645b857c31a59dfdba35ba40c1b0484ca36e9aab72b7410116284630cc0ecb419978ee7f010c91fbaf7a894f3a41a22b2b53c8acca6e0b18b8384456e762d644a82c2ba868183deee116db22ff899a24655f4a20432caeadd94dd453fc900110cd475843933647959a63

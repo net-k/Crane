@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f92abe4fcee2496aba1583c8ae7924e, type: 3}
+  m_Name: ShopData
+  m_EditorClassIdentifier: 
+  shopData:
+  - enable: 1
+    sortOrder: 0
+    productId: 1
+    categoryId: 0
+    name: "\u304B\u3089\u3057"
+    price: 1
+    detail: "\u6B21\u306E\u304A\u3067\u3093\u306E\u5177\u3092\u5909\u3048\u308B"
+    prefabFileName: karashi
+    currencyType: 0
+    sale: 1
+  - enable: 1
+    sortOrder: 0
+    productId: 2
+    categoryId: 0
+    name: "\u4E03\u5473"
+    price: 1
+    detail: "\u6B21\u306E\u304A\u3067\u3093\u306E\u5177\u3092\u5909\u3048\u308B"
+    prefabFileName: shichimi
+    currencyType: 0
+    sale: 1
+  - enable: 1
+    sortOrder: 0
+    productId: 3
+    categoryId: 0
+    name: "\u307F\u305D"
+    price: 1
+    detail: "\u6B21\u306E\u304A\u3067\u3093\u306E\u5177\u3092\u5909\u3048\u308B"
+    prefabFileName: miso
+    currencyType: 0
+    sale: 0
+  - enable: 1
+    sortOrder: 0
+    productId: 4
+    categoryId: 0
+    name: "\u67DA\u5B50\u3053\u3057\u3087\u3046"
+    price: 1
+    detail: "\u6B21\u306E\u304A\u3067\u3093\u306E\u5177\u3092\u5909\u3048\u308B"
+    prefabFileName: yuzu
+    currencyType: 0
+    sale: 0
