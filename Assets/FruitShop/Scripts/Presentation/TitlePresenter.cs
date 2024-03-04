@@ -51,7 +51,8 @@ namespace Quiz.Presentation
 		private void Next()
 		{
 			// SceneManager.LoadScene("MainScene");
-			_menuDialog.Show();
+			SceneManager.LoadScene("CraneGame");
+			// _menuDialog.Show();
 		}
 	}
 }

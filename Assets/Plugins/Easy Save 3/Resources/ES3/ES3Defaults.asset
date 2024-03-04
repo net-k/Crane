@@ -33,6 +33,7 @@ MonoBehaviour:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
     - OdenGameAssembly
+    - Purchasing.Common
     - UniRx
     - UniTask
     - UniTask.Addressables

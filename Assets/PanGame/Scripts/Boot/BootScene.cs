@@ -117,7 +117,7 @@ namespace Quiz.Application.Boot
         private void InitializeAds()
         {
             _adMobBanner.RequestBanner();
-            SceneManager.LoadScene( "MainScene" );
+            SceneManager.LoadScene( "Title" );
         }
 
         #if false

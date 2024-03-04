@@ -4,11 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bottom Stage
-  - Republic
-  - Red Line
-  - Dead Line
-  - Side Stage
+  - Item
+  - InsideWall
+  - WallSensor
   layers:
   - Default
   - TransparentFX
@@ -43,18 +41,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Back Canvas
-    uniqueID: 3188185761
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Stage
-    uniqueID: 298139479
-    locked: 0
-  - name: Effect
-    uniqueID: 4110744205
-    locked: 0
-  - name: Pet
-    uniqueID: 1123428465
     locked: 0
