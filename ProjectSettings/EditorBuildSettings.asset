@@ -6,13 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ClawMachinePro/Scenes/ClawMachine - Red & Blue.unity
-    guid: 888999170224ce54288381580b981114
+    path: Assets/PanGame/Scenes/Boot.unity
+    guid: f9b61c5e83d034f3db26e7910bfd60e9
   - enabled: 1
-    path: Assets/ClawMachinePro/Scenes/ClawMachine - Double Wide Red & Blue Variant
-      1.unity
-    guid: b531df97c3355b647ad73d47bfe2a74b
+    path: Assets/FruitShop/Scenes/Title.unity
+    guid: 1a963069f4f4e478aa439473ecc45abb
   - enabled: 1
-    path: Assets/ClawMachinePro/Scenes/ClawMachine - Double Wide Red & Blue Variant
-      2.unity
-    guid: 9b5b92c5776b7034f8807c320b69f41f
+    path: Assets/ClawMachinePro/Scenes/CraneGame.unity
+    guid: dbfb0038bbf574c69950cb97d24b4174
+  - enabled: 1
+    path: Assets/OdenGame/Scenes/Shop.unity
+    guid: c4e9f9c8ebf4241718fc480e5596c6c3
+  - enabled: 1
+    path: Assets/FruitShop/Scenes/Collection.unity
+    guid: e59b33cfe389f4877a6541d8faad8bb2
+  m_configObjects: {}

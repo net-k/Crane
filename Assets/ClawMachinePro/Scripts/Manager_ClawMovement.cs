@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Crane;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -103,6 +104,9 @@ public class Manager_ClawMovement : MonoBehaviour {
     [Header("Misc Settings")]
     public PrizeCatcherDetector_ClawMachine prizeCatcherDetector;
 
+    [SerializeField]
+    private CraneGameStateMachine _craneGameStateMachine = null;
+    
 	// Use this for initialization
 	void Start () {
 
@@ -172,6 +176,19 @@ public class Manager_ClawMovement : MonoBehaviour {
     }
 
 
+    /// <summary>
+    /// 1. クローが景品受け取り口の上にあるかどうかをチェックします: 関数は、クローが景品受け取り口の上にあるかどうかをチェックします。もしそうなら、クローを落とす代わりにクローを開きます。
+    /// 2. フリープレイモードかどうかを確認します: ゲームがフリープレイモードでない場合、プレイヤーがマシンを操作するために十分なコインを持っているかどうかをチェックします。コインがあれば、プレイヤーの残高から1つのコインを差し引き、クローを落とします。
+    /// 3. クローを落とすためのコルーチン: dropClaw() という名前のコルーチンがクローを落とす処理を行います。コルーチンは、Unityで非同期操作を扱うために使用されます。
+    /// 4. 移動の無効化: クローを落とす間、移動は無効になります (canMove = false)。これにより、クローが動いている間にプレイヤーがクローを動かすことができなくなります。
+    /// 5. コイン不足の処理: プレイヤーが十分なコインを持っていない場合で、かつゲームがフリープレイモードでない場合、プレイヤーがコイン切れであることを示すUIポップアップが表示されます。
+    ///
+    /// このコードの流れを基本的に説明しました。
+    /// クローが景品受け取り口の上にある場合は、クローを開きます。
+    /// ゲームがフリープレイモードでない場合:
+    /// プレイヤーがコインを持っていれば、1つのコインを差し引いてクローを落とし、移動を無効にします。
+    /// プレイヤーがコインを持っていない場合は、コイン切れのUIポップアップを表示します。
+    /// </summary>
     private void dropClawButtonInput()
     {
         // Make sure we're NOT above the prize catcher, we need to do a release for that, NOT a drop
@@ -216,6 +233,12 @@ public class Manager_ClawMovement : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// この関数は、クローを開くためのボタン入力を処理します。isDroppingBall フラグをチェックして、ボールを落とす処理が実行中でないことを確認し、それからクローを開くための処理を行います。
+    ///
+    /// 1. ボールを落とす処理が実行中でないことを確認します: isDroppingBall フラグが false の場合、つまりボールを落とす処理が現在実行中でない場合に処理を実行します。これにより、複数回のボール落下が同時に起こるのを防ぎます。
+    /// 2. ボールを落とすコルーチンを開始します: StartCoroutine(DropBall()) を呼び出すことで、DropBall() という名前のコルーチンを開始します。これにより、クローが開く際にアニメーションなどの非同期処理を行うことができます。
+    /// </summary>
     private void openClawButtonInput()
     {
         // If we're not actively dropping the ball - This prevents from trying to drop multiple times
@@ -294,7 +317,31 @@ public class Manager_ClawMovement : MonoBehaviour {
     }
 
     /// <summary>
-    /// Used to drop the claw from a position. 
+    /// Used to drop the claw from a position.
+    ///
+    /// クローを落とすためのコルーチン dropClaw() を実装しています。このコルーチンは、クローが下に移動し、物体をつかむためのアクションを実行します。以下は、このコルーチンの主な機能の解説です。
+    /// 1. クローの落下と開閉のアニメーション:
+    /// clawDropFromPosition に現在のクローの位置を保存します。
+    /// OpenClaw() を呼び出して、クローの開閉アニメーションを再生します。
+    /// 
+    /// 2. クローの落下ループ:
+    /// クローの高さが LimitY を超えるまで、クローを下に移動させます。
+    /// stopMovement が true になった場合、動きを停止し、処理を抜けます。
+    /// 
+    /// 3.クローの上昇とクローズ:
+    /// クローが物体をつかんだ後、一定の時間待機し、その後、クローを上昇させます。
+    /// stopMovement が true の場合、クローを元の位置に戻し、クローを閉じます。また、一定の確率でクローがうまく閉じない場合、別のコルーチン WeakClaws() を開始します。
+    ///
+    /// 4.クローの自動帰還:
+    /// shouldReturnHomeAutomatically が true の場合、クローを元の位置に戻す処理を行います。
+    /// Vector3.Lerp() を使用して、徐々にクローを元の位置に戻します。
+    /// 待機後、再びクローを開いて閉じます。
+    ///
+    /// 5.移動と衝突検知のリセット:
+    /// canMove を true に設定して、再び移動を許可します。
+    /// stopMovement を false にリセットして、クローが内壁と衝突して移動が停止した場合に備えます。
+    ///
+    /// 最後に、yield return null; を使用して、次のフレームまで処理を一時停止します。このコルーチンは、クローの動作や制御を効果的に行うために、非常に複雑な機能を持っています。
     /// </summary>
     /// <returns></returns>
     IEnumerator dropClaw()
